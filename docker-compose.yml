@@ -12,7 +12,7 @@ services:
 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.saas-tools-portal.rule=Host(`tools.example.com`)"
+      - "traefik.http.routers.saas-tools-portal.rule=Host(`tools.edsavvy.online`)"
       - "traefik.http.routers.saas-tools-portal.entrypoints=websecure"
       - "traefik.http.routers.saas-tools-portal.tls.certresolver=letsencrypt"
       - "traefik.http.services.saas-tools-portal.loadbalancer.server.port=80"
