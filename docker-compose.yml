@@ -10,17 +10,12 @@ services:
 
     restart: unless-stopped
 
+    ports:
+      - "8085:80"
+
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.saas-tools-portal.rule=Host(`tools.edsavvy.online`)"
       - "traefik.http.routers.saas-tools-portal.entrypoints=websecure"
       - "traefik.http.routers.saas-tools-portal.tls.certresolver=letsencrypt"
       - "traefik.http.services.saas-tools-portal.loadbalancer.server.port=80"
-
-    networks:
-      - traefik-proxy
-
-networks:
-
-  traefik-proxy:
-    external: true
