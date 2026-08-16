@@ -4,45 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SaaS Product Portal - Your business tools and applications in one place">
-    <meta name="theme-color" content="#0B0F19">
+    <meta name="theme-color" content="#0F4C5C">
     <title>Product Portal</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230B0F19'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='50' fill='white' font-family='system-ui'%3EP%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230F4C5C'/><text x='50' y='68' text-anchor='middle' font-size='50' fill='white' font-family='system-ui'>P</text></svg>">
     <style>
         /* ============================================================
            CSS VARIABLES
            ============================================================ */
         :root {
-            --primary: #FFFFFF;
-            --primary-hover: #E2E8F0;
+            --primary: #0F4C5C;
+            --primary-hover: #0A1628;
             --accent: #E8B931;
             --success: #4ADE80;
 
-            --background: #0B0F19;
-            --surface: #131A2B;
-            --surface-hover: #1A2338;
+            --background: #FFFFFF;
+            --surface: #F8F9FA;
+            --surface-hover: #F0F1F2;
 
-            --border: #1C2640;
-            --border-light: #161E30;
-            --border-strong: #2A3655;
+            --border: #E5E7EB;
+            --border-light: #EEEEEE;
+            --border-strong: #DDDDDD;
 
-            --text-primary: #FFFFFF;
-            --text-secondary: #FFFFFF;
-            --text-muted: #5A6577;
+            --text-primary: #000000;
+            --text-secondary: #0F4C5C;
+            --text-muted: #AAAAAA;
 
-            --header-background: #0B0F19;
+            --header-background: #FFFFFF;
 
-            --white: #131A2B;
-            --white-transparent: rgba(255, 255, 255, 0.06);
+            --white: #FFFFFF;
+            --white-transparent: rgba(255, 255, 255, 0.6);
 
             --radius-sm: 8px;
             --radius-md: 12px;
             --radius-lg: 16px;
             --radius-xl: 20px;
 
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.15);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.25), 0 2px 4px rgba(0,0,0,0.15);
-            --shadow-lg: 0 8px 24px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2);
-            --shadow-xl: 0 12px 40px rgba(0,0,0,0.35), 0 4px 12px rgba(0,0,0,0.2);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.03);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.07), 0 4px 8px rgba(0,0,0,0.04);
+            --shadow-xl: 0 12px 40px rgba(0,0,0,0.09), 0 4px 12px rgba(0,0,0,0.04);
 
             --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
             --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -120,7 +120,7 @@
             border-bottom: 1px solid var(--border);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            background: rgba(11, 15, 25, 0.92);
+            background: rgba(255, 255, 255, 0.92);
         }
 
         .header-inner {
@@ -199,8 +199,8 @@
             align-items: center;
             gap: 6px;
             padding: 6px 14px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(15, 76, 92, 0.06);
+            border: 1px solid rgba(15, 76, 92, 0.1);
             border-radius: 100px;
             font-size: 12px;
             font-weight: 600;
@@ -233,7 +233,7 @@
         }
 
         .welcome-title span {
-            color: var(--accent);
+            color: var(--primary);
         }
 
         .welcome-subtitle {
@@ -377,7 +377,7 @@
             gap: 6px;
             padding: 10px 24px;
             background: var(--primary);
-            color: #0B0F19;
+            color: var(--white);
             font-size: 13px;
             font-weight: 600;
             border-radius: var(--radius-sm);
@@ -390,7 +390,7 @@
         .product-btn:hover {
             background: var(--primary-hover);
             transform: translateY(-1px);
-            box-shadow: 0 4px 16px rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 12px rgba(15, 76, 92, 0.25);
         }
 
         .product-btn:focus-visible {
@@ -415,7 +415,7 @@
         .product-btn--coming-soon {
             background: transparent;
             color: var(--accent);
-            border: 1px solid rgba(232, 185, 49, 0.25);
+            border: 1px solid rgba(232, 185, 49, 0.3);
             cursor: default;
         }
 
@@ -426,7 +426,7 @@
         }
 
         .product-btn--disabled {
-            background: var(--border);
+            background: var(--border-light);
             color: var(--text-muted);
             cursor: not-allowed;
         }
@@ -702,32 +702,32 @@
            CLIENT CONFIGURATION
            ============================================================ */
         const clientConfig = {
-            companyName: "Shine Travels & Tours ",
+            companyName: "Nexus Digital",
             logo: "YOUR_LOGO_URL_HERE",
             tagline: "Your business tools and applications in one place.",
-            saasName: "Shine Travels & Tours ",
+            saasName: "Nexus Platform",
             theme: {
-                primary: "#FFFFFF",
-                primaryHover: "#E2E8F0",
+                primary: "#0F4C5C",
+                primaryHover: "#0A1628",
                 accent: "#E8B931",
                 success: "#4ADE80",
 
-                background: "#0B0F19",
-                surface: "#131A2B",
-                surfaceHover: "#1A2338",
+                background: "#FFFFFF",
+                surface: "#F8F9FA",
+                surfaceHover: "#F0F1F2",
 
-                border: "#1C2640",
-                borderLight: "#161E30",
-                borderStrong: "#2A3655",
+                border: "#E5E7EB",
+                borderLight: "#EEEEEE",
+                borderStrong: "#DDDDDD",
 
-                textPrimary: "#FFFFFF",
-                textSecondary: "#FFFFFF",
-                textMuted: "#5A6577",
+                textPrimary: "#000000",
+                textSecondary: "#0F4C5C",
+                textMuted: "#AAAAAA",
 
-                headerBackground: "#0B0F19",
+                headerBackground: "#FFFFFF",
 
-                white: "#131A2B",
-                whiteTransparent: "rgba(255, 255, 255, 0.06)"
+                white: "#FFFFFF",
+                whiteTransparent: "rgba(255, 255, 255, 0.6)"
             }
         };
 
@@ -738,7 +738,7 @@
             {
                 name: "AI Assistant",
                 description: "AI-powered business assistant for smart automation",
-                icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Crect width='48' height='48' rx='12' fill='%23FFFFFF'/%3E%3Cpath d='M24 12a6 6 0 0 1 6 6v2a6 6 0 0 1-12 0v-2a6 6 0 0 1 6-6z' fill='%230B0F19'/%3E%3Crect x='17' y='26' width='14' height='3' rx='1.5' fill='%230B0F19'/%3E%3Crect x='19' y='31' width='10' height='3' rx='1.5' fill='%230B0F19' opacity='.5'/%3E%3Ccircle cx='21' cy='20' r='1.2' fill='%230B0F19'/%3E%3Ccircle cx='27' cy='20' r='1.2' fill='%230B0F19'/%3E%3C/svg%3E",
+                icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Crect width='48' height='48' rx='12' fill='%230F4C5C'/%3E%3Cpath d='M24 12a6 6 0 0 1 6 6v2a6 6 0 0 1-12 0v-2a6 6 0 0 1 6-6z' fill='%23E8B931'/%3E%3Crect x='17' y='26' width='14' height='3' rx='1.5' fill='white'/%3E%3Crect x='19' y='31' width='10' height='3' rx='1.5' fill='white' opacity='.6'/%3E%3Ccircle cx='21' cy='20' r='1.2' fill='white'/%3E%3Ccircle cx='27' cy='20' r='1.2' fill='white'/%3E%3C/svg%3E",
                 url: "https://example.com/ai-assistant",
                 buttonLabel: "Open",
                 openInNewTab: true,
@@ -747,7 +747,7 @@
             {
                 name: "CRM",
                 description: "Manage customers, leads, and sales pipelines",
-                icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Crect width='48' height='48' rx='12' fill='%23FFFFFF'/%3E%3Ccircle cx='24' cy='18' r='6' fill='%230B0F19'/%3E%3Cpath d='M14 36c0-5.523 4.477-10 10-10s10 4.477 10 10' stroke='%230B0F19' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E",
+                icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Crect width='48' height='48' rx='12' fill='%230F4C5C'/%3E%3Ccircle cx='24' cy='18' r='6' fill='%23E8B931'/%3E%3Cpath d='M14 36c0-5.523 4.477-10 10-10s10 4.477 10 10' stroke='white' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E",
                 url: "https://example.com/crm",
                 buttonLabel: "Access",
                 openInNewTab: true,
@@ -756,7 +756,7 @@
             {
                 name: "Analytics Hub",
                 description: "Real-time dashboards and business intelligence",
-                icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Crect width='48' height='48' rx='12' fill='%23FFFFFF'/%3E%3Crect x='10' y='28' width='5' height='10' rx='1.5' fill='%230B0F19'/%3E%3Crect x='18' y='22' width='5' height='16' rx='1.5' fill='%230B0F19' opacity='.7'/%3E%3Crect x='26' y='16' width='5' height='22' rx='1.5' fill='%230B0F19' opacity='.5'/%3E%3Crect x='34' y='12' width='5' height='26' rx='1.5' fill='%230B0F19' opacity='.35'/%3E%3C/svg%3E",
+                icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Crect width='48' height='48' rx='12' fill='%230F4C5C'/%3E%3Crect x='10' y='28' width='5' height='10' rx='1.5' fill='%23E8B931'/%3E%3Crect x='18' y='22' width='5' height='16' rx='1.5' fill='white'/%3E%3Crect x='26' y='16' width='5' height='22' rx='1.5' fill='%234ADE80'/%3E%3Crect x='34' y='12' width='5' height='26' rx='1.5' fill='%23E8B931'/%3E%3C/svg%3E",
                 url: "https://example.com/analytics",
                 buttonLabel: "Launch",
                 openInNewTab: true,
@@ -765,7 +765,7 @@
             {
                 name: "Project Manager",
                 description: "Plan, track, and deliver projects on time",
-                icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Crect width='48' height='48' rx='12' fill='%23FFFFFF'/%3E%3Crect x='10' y='10' width='28' height='28' rx='4' stroke='%230B0F19' stroke-width='2.5' fill='none'/%3E%3Cpath d='M16 24l4 4 8-8' stroke='%230B0F19' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E",
+                icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Crect width='48' height='48' rx='12' fill='%230F4C5C'/%3E%3Crect x='10' y='10' width='28' height='28' rx='4' stroke='%23E8B931' stroke-width='2.5' fill='none'/%3E%3Cpath d='M16 24l4 4 8-8' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E",
                 url: "https://example.com/projects",
                 buttonLabel: "Open",
                 openInNewTab: true,
@@ -774,7 +774,7 @@
             {
                 name: "Email Campaigns",
                 description: "Create and automate email marketing workflows",
-                icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Crect width='48' height='48' rx='12' fill='%23FFFFFF'/%3E%3Crect x='8' y='14' width='32' height='22' rx='4' stroke='%230B0F19' stroke-width='2' fill='none'/%3E%3Cpath d='M8 18l16 10 16-10' stroke='%230B0F19' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E",
+                icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Crect width='48' height='48' rx='12' fill='%230F4C5C'/%3E%3Crect x='8' y='14' width='32' height='22' rx='4' stroke='%23E8B931' stroke-width='2' fill='none'/%3E%3Cpath d='M8 18l16 10 16-10' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E",
                 url: "https://example.com/email",
                 buttonLabel: "Access",
                 openInNewTab: true,
@@ -783,7 +783,7 @@
             {
                 name: "Document Center",
                 description: "Store, share, and collaborate on documents",
-                icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Crect width='48' height='48' rx='12' fill='%23FFFFFF'/%3E%3Cpath d='M16 8h12l8 8v24a4 4 0 0 1-4 4H16a4 4 0 0 1-4-4V12a4 4 0 0 1 4-4z' fill='%230B0F19' opacity='.1'/%3E%3Cpath d='M28 8v8h8' stroke='%230B0F19' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cline x1='18' y1='24' x2='30' y2='24' stroke='%230B0F19' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='18' y1='30' x2='30' y2='30' stroke='%230B0F19' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='18' y1='36' x2='25' y2='36' stroke='%230B0F19' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E",
+                icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Crect width='48' height='48' rx='12' fill='%230F4C5C'/%3E%3Cpath d='M16 8h12l8 8v24a4 4 0 0 1-4 4H16a4 4 0 0 1-4-4V12a4 4 0 0 1 4-4z' fill='white' opacity='.2'/%3E%3Cpath d='M28 8v8h8' stroke='%23E8B931' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cline x1='18' y1='24' x2='30' y2='24' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='18' y1='30' x2='30' y2='30' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='18' y1='36' x2='25' y2='36' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E",
                 url: "https://example.com/documents",
                 buttonLabel: "Open",
                 openInNewTab: true,
@@ -792,7 +792,7 @@
             {
                 name: "Support Desk",
                 description: "Ticketing system and customer support tools",
-                icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Crect width='48' height='48' rx='12' fill='%23FFFFFF'/%3E%3Ccircle cx='24' cy='22' r='10' stroke='%230B0F19' stroke-width='2' fill='none'/%3E%3Cpath d='M20 22a4 4 0 0 1 8 0' stroke='%230B0F19' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='22' cy='20' r='1.2' fill='%230B0F19'/%3E%3Ccircle cx='26' cy='20' r='1.2' fill='%230B0F19'/%3E%3Cpath d='M21 24s1.5 2 3 2 3-2 3-2' stroke='%230B0F19' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M18 34l-2 4h16l-2-4' stroke='%230B0F19' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E",
+                icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Crect width='48' height='48' rx='12' fill='%230F4C5C'/%3E%3Ccircle cx='24' cy='22' r='10' stroke='%23E8B931' stroke-width='2' fill='none'/%3E%3Cpath d='M20 22a4 4 0 0 1 8 0' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='22' cy='20' r='1.2' fill='white'/%3E%3Ccircle cx='26' cy='20' r='1.2' fill='white'/%3E%3Cpath d='M21 24s1.5 2 3 2 3-2 3-2' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M18 34l-2 4h16l-2-4' stroke='%234ADE80' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E",
                 url: "https://example.com/support",
                 buttonLabel: "Visit",
                 openInNewTab: true,
@@ -934,7 +934,7 @@
                                      loading="lazy"
                                      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                                 <div class="product-icon-fallback" style="display:none">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="#0B0F19" stroke-width="1.5" stroke-linecap="round">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round">
                                         <rect x="4" y="4" width="16" height="16" rx="3"/>
                                         <path d="M9 9h6M9 12h4"/>
                                     </svg>
@@ -988,9 +988,9 @@
                 let particles = [];
                 let animationId;
 
-                const PARTICLE_COUNT = 40;
+                const PARTICLE_COUNT = 35;
                 const CONNECTION_DISTANCE = 160;
-                const COLORS = ['#FFFFFF', '#E8B931', '#4ADE80'];
+                const COLORS = ['#0F4C5C', '#E8B931', '#4ADE80'];
 
                 function resize() {
                     width = canvas.width = window.innerWidth;
@@ -1007,7 +1007,7 @@
                             vy: (Math.random() - 0.5) * 0.3,
                             radius: Math.random() * 2 + 1,
                             color: COLORS[Math.floor(Math.random() * COLORS.length)],
-                            opacity: Math.random() * 0.25 + 0.1
+                            opacity: Math.random() * 0.3 + 0.08
                         });
                     }
                 }
@@ -1020,7 +1020,7 @@
                         ctx.beginPath();
                         ctx.arc(x, y, Math.random() * 2 + 1, 0, Math.PI * 2);
                         ctx.fillStyle = color;
-                        ctx.globalAlpha = Math.random() * 0.12 + 0.04;
+                        ctx.globalAlpha = Math.random() * 0.15 + 0.05;
                         ctx.fill();
                     }
                     ctx.globalAlpha = 1;
@@ -1056,7 +1056,7 @@
                                 ctx.moveTo(p.x, p.y);
                                 ctx.lineTo(p2.x, p2.y);
                                 ctx.strokeStyle = p.color;
-                                ctx.globalAlpha = (1 - dist / CONNECTION_DISTANCE) * 0.08;
+                                ctx.globalAlpha = (1 - dist / CONNECTION_DISTANCE) * 0.06;
                                 ctx.lineWidth = 0.8;
                                 ctx.stroke();
                             }
