@@ -1,0 +1,26 @@
+services:
+
+  saas-tools-portal:
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: saas-tools-portal
+
+    restart: unless-stopped
+
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.saas-tools-portal.rule=Host(`tools.example.com`)"
+      - "traefik.http.routers.saas-tools-portal.entrypoints=websecure"
+      - "traefik.http.routers.saas-tools-portal.tls.certresolver=letsencrypt"
+      - "traefik.http.services.saas-tools-portal.loadbalancer.server.port=80"
+
+    networks:
+      - traefik-proxy
+
+networks:
+
+  traefik-proxy:
+    external: true
