@@ -684,6 +684,17 @@
                     <!-- Dynamically populated -->
                 </div>
             </section>
+
+            <!-- BACKEND APPS -->
+            <section class="products-section" aria-label="Backend Apps" style="padding-top: clamp(16px, 3vw, 32px);">
+                <div class="products-header" id="backend-header" style="display:none;">
+                    <span class="products-label">Backend Apps</span>
+                    <span class="products-count" id="backend-count"></span>
+                </div>
+                <div class="product-grid" id="backend-grid" role="list">
+                    <!-- Dynamically populated -->
+                </div>
+            </section>
         </div>
     </main>
 
@@ -785,6 +796,57 @@
         ];
 
         /* ============================================================
+           BACKEND APPS CONFIGURATION
+           ============================================================ */
+        const backendApps = [
+            {
+                name: "Hostinger Panel",
+                description: "Manage VPS, domains, DNS & billing — Hostinger control panel",
+                icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Crect width='48' height='48' rx='12' fill='%230A1628'/%3E%3Crect x='10' y='8' width='28' height='10' rx='3' stroke='%23E8B931' stroke-width='2.5' fill='none'/%3E%3Crect x='10' y='20' width='28' height='10' rx='3' stroke='white' stroke-width='2.5' fill='none'/%3E%3Crect x='10' y='32' width='28' height='8' rx='3' stroke='%234ADE80' stroke-width='2.5' fill='none'/%3E%3Ccircle cx='16' cy='13' r='2' fill='%234ADE80'/%3E%3Ccircle cx='16' cy='25' r='2' fill='%23E8B931'/%3E%3Ccircle cx='16' cy='36' r='2' fill='white'/%3E%3Cline x1='22' y1='13' x2='34' y2='13' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3Cline x1='22' y1='25' x2='30' y2='25' stroke='%23E8B931' stroke-width='1.5' stroke-linecap='round'/%3E%3Cline x1='22' y1='36' x2='32' y2='36' stroke='%234ADE80' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E",
+                url: "https://hpanel.hostinger.com",
+                buttonLabel: "Login",
+                openInNewTab: true,
+                status: "available"
+            },
+            {
+                name: "n8n Automation",
+                description: "Workflow automation — connect APIs, CRMs & AI agents",
+                icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Crect width='48' height='48' rx='12' fill='%230A1628'/%3E%3Ccircle cx='24' cy='24' r='14' stroke='%23E8B931' stroke-width='2.5' fill='none'/%3E%3Ccircle cx='24' cy='14' r='4' fill='%23E8B931'/%3E%3Ccircle cx='16' cy='30' r='4' fill='white'/%3E%3Ccircle cx='32' cy='30' r='4' fill='%234ADE80'/%3E%3Cline x1='24' y1='18' x2='18' y2='27' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='24' y1='18' x2='30' y2='27' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='19' y1='30' x2='29' y2='30' stroke='%23E8B931' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E",
+                url: "http://76.13.252.224:5678",
+                buttonLabel: "Open",
+                openInNewTab: true,
+                status: "available"
+            },
+            {
+                name: "Traefik Proxy",
+                description: "Reverse proxy dashboard — routing, TLS & service health",
+                icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Crect width='48' height='48' rx='12' fill='%230A1628'/%3E%3Cpath d='M14 14h20v6H14z' stroke='%23E8B931' stroke-width='2.5' fill='none'/%3E%3Cpath d='M14 28h20v6H14z' stroke='white' stroke-width='2.5' fill='none'/%3E%3Cline x1='24' y1='20' x2='24' y2='28' stroke='%234ADE80' stroke-width='2.5' stroke-linecap='round'/%3E%3Ccircle cx='24' cy='20' r='2' fill='%23E8B931'/%3E%3Ccircle cx='24' cy='28' r='2' fill='white'/%3E%3Cpath d='M8 24h6M34 24h6' stroke='%23E8B931' stroke-width='2' stroke-linecap='round' opacity='.5'/%3E%3C/svg%3E",
+                url: "http://76.13.252.224:8080",
+                buttonLabel: "Open",
+                openInNewTab: true,
+                status: "available"
+            },
+            {
+                name: "Deepgram STT",
+                description: "Speech-to-Text engine — real-time voice transcription for calls",
+                icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Crect width='48' height='48' rx='12' fill='%230A1628'/%3E%3Crect x='20' y='8' width='8' height='18' rx='4' stroke='%23E8B931' stroke-width='2.5' fill='none'/%3E%3Cpath d='M14 22c0 5.5 4.5 10 10 10s10-4.5 10-10' stroke='white' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='24' y1='32' x2='24' y2='38' stroke='%234ADE80' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='19' y1='38' x2='29' y2='38' stroke='%234ADE80' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M34 18c1.5 1 2.5 2.5 2.5 4' stroke='%23E8B931' stroke-width='1.5' stroke-linecap='round' opacity='.5'/%3E%3Cpath d='M36 14c2.5 2 4 5 4 8' stroke='%23E8B931' stroke-width='1.5' stroke-linecap='round' opacity='.3'/%3E%3C/svg%3E",
+                url: "https://deepgram.com",
+                buttonLabel: "Docs",
+                openInNewTab: true,
+                status: "available"
+            },
+            {
+                name: "ElevenLabs TTS",
+                description: "Text-to-Speech voice synthesis — natural AI voices for Emma agent",
+                icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Crect width='48' height='48' rx='12' fill='%230A1628'/%3E%3Cpath d='M12 20v8' stroke='%23E8B931' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M17 16v16' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M22 12v24' stroke='%23E8B931' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M27 14v20' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M32 18v12' stroke='%234ADE80' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M37 22v4' stroke='%23E8B931' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E",
+                url: "https://elevenlabs.io",
+                buttonLabel: "Docs",
+                openInNewTab: true,
+                status: "available"
+            }
+        ];
+
+        /* ============================================================
            APPLICATION LOGIC
            ============================================================ */
         (function() {
@@ -840,13 +902,13 @@
                 container.innerHTML = `
                     <div class="welcome-badge animate-in" style="animation-delay:0ms">
                         <span class="welcome-badge-dot"></span>
-                        SHIN Travels — Est. 1998
+                        Native AI voice, chat, escalation, and operations
                     </div>
                     <h1 class="welcome-title animate-in" style="animation-delay:80ms">
-                        Welcome to <span>SHIN Travels</span>
+                        Autonomous AI Call Center <span>OS</span>
                     </h1>
                     <p class="welcome-subtitle animate-in" style="animation-delay:160ms">
-                        AI-Powered Travel Services — Flights, Umrah & Holidays since 1998
+                        A complete AI operating layer for customer-facing teams.
                     </p>
                 `;
             }
@@ -926,6 +988,87 @@
                             </div>
                             <h3 class="product-name">${escapeHtml(product.name)}</h3>
                             <p class="product-description">${escapeHtml(product.description)}</p>
+                            ${buttonHtml}
+                        </article>
+                    `;
+                }).join('');
+            }
+
+            /* ----- Render Backend Apps ----- */
+            function renderBackendApps() {
+                const grid = document.getElementById('backend-grid');
+                const header = document.getElementById('backend-header');
+                const count = document.getElementById('backend-count');
+
+                if (backendApps.length === 0) {
+                    grid.innerHTML = `
+                        <div class="empty-state" style="grid-column: 1 / -1;">
+                            <div class="empty-state-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="18" height="18" rx="3"/>
+                                    <path d="M9 9h6M9 12h4"/>
+                                </svg>
+                            </div>
+                            <h2 class="empty-state-title">No backend apps</h2>
+                            <p class="empty-state-text">Backend services will appear here once configured.</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                header.style.display = 'flex';
+                count.textContent = `${backendApps.length} service${backendApps.length !== 1 ? 's' : ''}`;
+
+                grid.innerHTML = backendApps.map((app, index) => {
+                    const status = app.status || 'available';
+                    const delay = index * 60;
+
+                    let buttonHtml = '';
+                    if (status === 'available') {
+                        buttonHtml = `
+                            <a href="${escapeAttr(app.url)}"
+                               class="product-btn"
+                               ${app.openInNewTab ? 'target="_blank" rel="noopener noreferrer"' : ''}
+                               role="button"
+                               aria-label="${escapeAttr(app.buttonLabel || 'Open')} ${escapeAttr(app.name)}">
+                                ${escapeHtml(app.buttonLabel || 'Open')}
+                                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 8h10M9 4l4 4-4 4"/>
+                                </svg>
+                            </a>
+                        `;
+                    } else if (status === 'coming-soon') {
+                        buttonHtml = `
+                            <span class="product-btn product-btn--coming-soon" aria-label="${escapeAttr(app.name)} is coming soon">
+                                Coming Soon
+                            </span>
+                        `;
+                    } else {
+                        buttonHtml = `
+                            <span class="product-btn product-btn--disabled" aria-label="${escapeAttr(app.name)} is unavailable">
+                                Unavailable
+                            </span>
+                        `;
+                    }
+
+                    return `
+                        <article class="product-card animate-in" style="animation-delay:${delay}ms" role="listitem" aria-label="${escapeAttr(app.name)}">
+                            <span class="product-status product-status--${status}" aria-label="Status: ${status.replace('-', ' ')}"></span>
+                            <div class="product-icon-wrapper">
+                                <img class="product-icon"
+                                     src="${escapeAttr(app.icon)}"
+                                     alt="${escapeAttr(app.name)} icon"
+                                     loading="lazy"
+                                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                                <div class="product-icon-fallback" style="display:none">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round">
+                                        <rect x="4" y="4" width="16" height="16" rx="3"/>
+                                        <path d="M9 9h6M9 12h4"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="product-name">${escapeHtml(app.name)}</h3>
+                            <p class="product-description">${escapeHtml(app.description)}</p>
                             ${buttonHtml}
                         </article>
                     `;
@@ -1071,6 +1214,7 @@
                 renderHeader();
                 renderWelcome();
                 renderProducts();
+                renderBackendApps();
                 renderFooter();
                 initBackground();
             }
@@ -1081,6 +1225,428 @@
                 init();
             }
         })();
+    </script>
+
+    <!-- ============================================================
+         FLOATING WIDGETS — TALK (Voice) & CHAT (Text)
+         ============================================================ -->
+    <style>
+        .shin-float-widgets {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            z-index: 10000;
+        }
+        .shin-float-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            border: none;
+            position: relative;
+        }
+        .shin-float-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 28px rgba(0,0,0,0.4);
+        }
+        .shin-float-btn svg {
+            width: 26px;
+            height: 26px;
+            fill: #fff;
+        }
+        .shin-call-btn { background: #2563EB; }
+        .shin-call-btn:hover { box-shadow: 0 6px 28px rgba(37,99,235,0.5); }
+        .shin-call-btn.active { background: #DC2626; animation: shin-pulse 1.5s infinite; }
+        .shin-chat-btn { background: #E8B931; }
+        .shin-chat-btn svg { fill: #0A1628; }
+        .shin-chat-btn:hover { box-shadow: 0 6px 28px rgba(232,185,49,0.5); }
+        .shin-float-label {
+            position: absolute;
+            right: 66px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #111d33;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+            border: 1px solid #1e3050;
+        }
+        .shin-float-btn:hover + .shin-float-label,
+        .shin-float-label:hover { opacity: 1; }
+        @keyframes shin-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(220,38,38,0.5); }
+            50% { box-shadow: 0 0 0 12px rgba(220,38,38,0); }
+        }
+
+        /* ---- Chat Panel ---- */
+        .shin-chat-overlay {
+            display: none;
+            position: fixed;
+            bottom: 94px;
+            right: 24px;
+            width: 380px;
+            max-width: calc(100vw - 32px);
+            height: 540px;
+            max-height: calc(100vh - 140px);
+            background: #0f1d32;
+            border-radius: 16px;
+            box-shadow: 0 12px 48px rgba(0,0,0,0.5);
+            border: 1px solid #1e3050;
+            z-index: 10001;
+            flex-direction: column;
+            overflow: hidden;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+        .shin-chat-overlay.open { display: flex; }
+        .shin-chat-header {
+            background: linear-gradient(135deg, #0A1628 0%, #162040 100%);
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #1e3050;
+            flex-shrink: 0;
+        }
+        .shin-chat-header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .shin-chat-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #E8B931, #b78210);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            color: #0A1628;
+        }
+        .shin-chat-header-info h4 {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0;
+        }
+        .shin-chat-header-info span {
+            color: #4ade80;
+            font-size: 11px;
+        }
+        .shin-chat-close {
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.5);
+            font-size: 20px;
+            cursor: pointer;
+            padding: 4px;
+            line-height: 1;
+        }
+        .shin-chat-close:hover { color: #fff; }
+        .shin-chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .shin-chat-messages::-webkit-scrollbar { width: 4px; }
+        .shin-chat-messages::-webkit-scrollbar-thumb { background: #1e3050; border-radius: 2px; }
+        .shin-msg {
+            max-width: 80%;
+            padding: 10px 14px;
+            border-radius: 14px;
+            font-size: 13px;
+            line-height: 1.5;
+            word-wrap: break-word;
+        }
+        .shin-msg-agent {
+            align-self: flex-start;
+            background: #1a2a45;
+            color: #e2e8f0;
+            border-bottom-left-radius: 4px;
+        }
+        .shin-msg-user {
+            align-self: flex-end;
+            background: linear-gradient(135deg, #2563EB, #1d4ed8);
+            color: #fff;
+            border-bottom-right-radius: 4px;
+        }
+        .shin-msg-typing {
+            align-self: flex-start;
+            background: #1a2a45;
+            padding: 12px 18px;
+        }
+        .shin-msg-typing span {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: #64748b;
+            border-radius: 50%;
+            margin: 0 2px;
+            animation: shin-dot 1.2s infinite;
+        }
+        .shin-msg-typing span:nth-child(2) { animation-delay: 0.2s; }
+        .shin-msg-typing span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes shin-dot {
+            0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+            40% { transform: translateY(-4px); opacity: 1; }
+        }
+        .shin-chat-input-bar {
+            padding: 12px 16px;
+            border-top: 1px solid #1e3050;
+            display: flex;
+            gap: 8px;
+            background: #0f1d32;
+            flex-shrink: 0;
+        }
+        .shin-chat-input-bar input {
+            flex: 1;
+            background: #1a2a45;
+            border: 1px solid #2a3f5f;
+            border-radius: 24px;
+            padding: 10px 16px;
+            color: #fff;
+            font-size: 13px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .shin-chat-input-bar input:focus { border-color: #E8B931; }
+        .shin-chat-input-bar input::placeholder { color: #64748b; }
+        .shin-chat-send {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #E8B931;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+        .shin-chat-send:hover { background: #d4a520; transform: scale(1.05); }
+        .shin-chat-send:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+        .shin-chat-send svg { width: 18px; height: 18px; fill: #0A1628; }
+        .shin-chat-footer {
+            text-align: center;
+            padding: 8px;
+            font-size: 10px;
+            color: #475569;
+            border-top: 1px solid #1e3050;
+            flex-shrink: 0;
+        }
+    </style>
+
+    <!-- Floating Buttons -->
+    <div class="shin-float-widgets">
+        <button class="shin-float-btn shin-call-btn" id="shin-talk-btn" aria-label="Talk to Agent">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <span class="shin-float-label">Talk to Agent</span>
+        </button>
+        <button class="shin-float-btn shin-chat-btn" id="shin-chat-btn" aria-label="Chat with Agent">
+            <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+            <span class="shin-float-label">Chat with Agent</span>
+        </button>
+    </div>
+
+    <!-- Chat Panel -->
+    <div class="shin-chat-overlay" id="shin-chat-panel">
+        <div class="shin-chat-header">
+            <div class="shin-chat-header-left">
+                <div class="shin-chat-avatar">E</div>
+                <div class="shin-chat-header-info">
+                    <h4>Emma - SHIN Travels</h4>
+                    <span>Online</span>
+                </div>
+            </div>
+            <button class="shin-chat-close" id="shin-chat-close">&times;</button>
+        </div>
+        <div class="shin-chat-messages" id="shin-chat-messages"></div>
+        <div class="shin-chat-input-bar">
+            <input type="text" id="shin-chat-input" placeholder="Type a message..." autocomplete="off" />
+            <button class="shin-chat-send" id="shin-chat-send" disabled>
+                <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            </button>
+        </div>
+        <div class="shin-chat-footer">Powered by SHIN Travels AI</div>
+    </div>
+
+    <!-- Dograh Voice Widget (Headless) + Custom Chat -->
+    <script>
+    (function() {
+        var CHAT_PROXY = 'https://chat.dograh-9niy.srv1809781.hstgr.cloud';
+
+        /* === VOICE WIDGET (Dograh headless) === */
+        var voiceScript = document.createElement('script');
+        voiceScript.src = 'https://dograh-9niy.srv1809781.hstgr.cloud/embed/dograh-widget.js?token=emb_dK3Zeq_K0Ktynnw51v8qpip3VNSZeHQLrfeDQGKrV7c&environment=production&apiEndpoint=https://dograh-9niy.srv1809781.hstgr.cloud';
+        voiceScript.setAttribute('data-dograh-context', JSON.stringify({
+            page_url: window.location.href,
+            today: new Date().toISOString().slice(0, 10)
+        }));
+        voiceScript.async = true;
+        document.body.appendChild(voiceScript);
+
+        var talkBtn = document.getElementById('shin-talk-btn');
+        var voiceState = 'idle';
+
+        function updateTalkBtn() {
+            talkBtn.className = 'shin-float-btn shin-call-btn' + (voiceState !== 'idle' ? ' active' : '');
+        }
+
+        function pollDograh() {
+            if (window.DograhWidget) {
+                window.DograhWidget.onStatusChange(function(status) {
+                    voiceState = status;
+                    updateTalkBtn();
+                });
+                window.DograhWidget.onError(function(err) {
+                    console.error('Dograh voice error:', err);
+                    voiceState = 'idle';
+                    updateTalkBtn();
+                });
+                return;
+            }
+            setTimeout(pollDograh, 500);
+        }
+        pollDograh();
+
+        talkBtn.addEventListener('click', function() {
+            if (!window.DograhWidget) {
+                alert('Voice widget is still loading, please try again in a moment.');
+                return;
+            }
+            if (voiceState === 'connected' || voiceState === 'connecting') {
+                window.DograhWidget.end();
+            } else {
+                window.DograhWidget.start();
+            }
+        });
+
+        /* === CHAT WIDGET (Custom via proxy) === */
+        var chatPanel = document.getElementById('shin-chat-panel');
+        var chatMessages = document.getElementById('shin-chat-messages');
+        var chatInput = document.getElementById('shin-chat-input');
+        var chatSendBtn = document.getElementById('shin-chat-send');
+        var chatCloseBtn = document.getElementById('shin-chat-close');
+        var chatOpen = false;
+        var chatSessionRunId = null;
+        var chatBusy = false;
+
+        function toggleChat() {
+            chatOpen = !chatOpen;
+            chatPanel.classList.toggle('open', chatOpen);
+            if (chatOpen && !chatSessionRunId) {
+                startChatSession();
+            }
+            if (chatOpen) chatInput.focus();
+        }
+
+        chatCloseBtn.addEventListener('click', function() {
+            chatOpen = false;
+            chatPanel.classList.remove('open');
+        });
+        document.getElementById('shin-chat-btn').addEventListener('click', toggleChat);
+
+        function addMessage(text, type) {
+            var div = document.createElement('div');
+            div.className = 'shin-msg shin-msg-' + type;
+            div.textContent = text;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return div;
+        }
+
+        function showTyping() {
+            var div = document.createElement('div');
+            div.className = 'shin-msg shin-msg-typing';
+            div.innerHTML = '<span></span><span></span><span></span>';
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return div;
+        }
+
+        async function startChatSession() {
+            addMessage('Connecting to Emma...', 'agent');
+            try {
+                var res = await fetch(CHAT_PROXY + '/api/session', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                var data = await res.json();
+                chatSessionRunId = data.workflow_run_id;
+                chatSendBtn.disabled = false;
+                chatMessages.innerHTML = '';
+                var greeting = data.session_data && data.session_data.turns && data.session_data.turns[0]
+                    ? data.session_data.turns[0].assistant_message.text
+                    : 'Hello! I\'m Emma from SHIN Travels. How can I help you today?';
+                addMessage(greeting, 'agent');
+            } catch (e) {
+                chatMessages.innerHTML = '';
+                addMessage('Sorry, I couldn\'t connect. Please try again.', 'agent');
+                console.error('Chat session error:', e);
+            }
+        }
+
+        async function sendChatMessage() {
+            var text = chatInput.value.trim();
+            if (!text || chatBusy || !chatSessionRunId) return;
+            chatBusy = true;
+            chatInput.value = '';
+            chatSendBtn.disabled = true;
+            addMessage(text, 'user');
+            var typingEl = showTyping();
+
+            try {
+                var res = await fetch(CHAT_PROXY + '/api/message/' + chatSessionRunId, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text: text })
+                });
+                var data = await res.json();
+                typingEl.remove();
+                var turns = data.session_data && data.session_data.turns;
+                if (turns && turns.length > 0) {
+                    var lastTurn = turns[turns.length - 1];
+                    if (lastTurn.assistant_message) {
+                        addMessage(lastTurn.assistant_message.text, 'agent');
+                    }
+                }
+            } catch (e) {
+                typingEl.remove();
+                addMessage('Sorry, something went wrong. Please try again.', 'agent');
+                console.error('Chat message error:', e);
+            }
+            chatBusy = false;
+            chatSendBtn.disabled = false;
+            chatInput.focus();
+        }
+
+        chatSendBtn.addEventListener('click', sendChatMessage);
+        chatInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendChatMessage();
+            }
+        });
+    })();
     </script>
 </body>
 </html>
